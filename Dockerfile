@@ -1,9 +1,16 @@
-FROM mamohr/centos-java:jre8
+FROM centos:7
 
-MAINTAINER Mario Mohr <mohr.mario@gmail.com>
+# Upgrading system
+RUN yum -y update && \
+    yum -y install wget && \
+    yum install -y java-1.8.0-openjdk && \
+    yum clean all && \
+    mkdir /usr/java && \
+    ln -s /etc/alternatives/jre /usr/java/latest
+
+ENV JAVA_HOME /etc/alternatives/jre
 
 RUN \
-  yum update -y && \
   yum install -y epel-release && \
   yum install -y net-tools python-setuptools hostname inotify-tools yum-utils && \
   yum clean all && \
