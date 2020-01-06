@@ -1,6 +1,14 @@
-# mamohr/subversion-edge
+# mayboTW/subversion-edge
 
 This is a docker image of the Collabnet Subversion Edge Server
+Forked from [mamohr/docker-subversion-edge](https://github.com/mamohr/docker-subversion-edge)
+
+## Forked Change list
+- Build from Centos
+- Use openJDK 1.8.0
+
+## Build Docker Image
+`$ ./build.sh`
 
 ## Usage
 
